@@ -3,6 +3,7 @@ import { View, StyleSheet } from "react-native";
 import ExpensesList from "./ExpensesList";
 import ExpensesSummary from "./ExpensesSummary";
 import { ExpenseInterface } from "../../types";
+import { GlobalStyles } from "../../constants/styles";
 
 interface ExpensesOutputProps {
     expenses: ExpenseInterface[],
@@ -44,7 +45,7 @@ const DUMMY_EXPENSES: ExpenseInterface[] = [
 
 const ExpensesOutput: FunctionComponent<ExpensesOutputProps> = ({ expenses, expensesPeriod }) => {
     return (
-        <View>
+        <View style={styles.container}>
             <ExpensesSummary
                 periodName={expensesPeriod}
                 expenses={DUMMY_EXPENSES}
@@ -54,6 +55,12 @@ const ExpensesOutput: FunctionComponent<ExpensesOutputProps> = ({ expenses, expe
     );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container: {
+        padding: 24,
+        backgroundColor: GlobalStyles.colors.primary700,
+        flex: 1
+    }
+});
 
 export default ExpensesOutput;
