@@ -2,15 +2,20 @@ import { FunctionComponent } from "react";
 import { View, StyleSheet } from "react-native";
 import ExpensesList from "./ExpensesList";
 import ExpensesSummary from "./ExpensesSummary";
+import { ExpenseInterface } from "../../types";
 
 interface ExpensesOutputProps {
-    expenses: number[],
+    expenses: ExpenseInterface[],
+    expensesPeriod: string;
 }
 
-const ExpensesOutput: FunctionComponent<ExpensesOutputProps> = ({ expenses }) => {
+const ExpensesOutput: FunctionComponent<ExpensesOutputProps> = ({ expenses, expensesPeriod }) => {
     return (
         <View>
-            <ExpensesSummary />
+            <ExpensesSummary
+                periodName={expensesPeriod}
+                expenses={expenses}
+            />
             <ExpensesList />
         </View>
     );

@@ -4,3 +4,9 @@ export type RootStackParamList = {
     AllExpenses: undefined,
     ExpensesOverview: undefined
 }
+
+export interface ExpenseInterface {
+    date: Date;
+    description: string;
+    amount: number;
+}
