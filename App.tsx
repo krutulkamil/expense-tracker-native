@@ -3,28 +3,10 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from "@react-navigation/native";
 import { RootStackParamList } from "./types";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import ManageExpense from "./screens/ManageExpense";
-import RecentExpenses from "./screens/RecentExpenses";
-import AllExpenses from "./screens/AllExpenses";
+import ExpensesOverview from "./components/navigation/ExpensesOverview";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
-const BottomTabs = createBottomTabNavigator<RootStackParamList>();
-
-const ExpensesOverview = () => {
-    return (
-        <BottomTabs.Navigator>
-            <BottomTabs.Screen
-                name="RecentExpenses"
-                component={RecentExpenses}
-            />
-            <BottomTabs.Screen
-                name="AllExpenses"
-                component={AllExpenses}
-            />
-        </BottomTabs.Navigator>
-    );
-};
 
 const App: FunctionComponent = () => {
     return (
@@ -35,6 +17,9 @@ const App: FunctionComponent = () => {
                     <Stack.Screen
                         name="ExpensesOverview"
                         component={ExpensesOverview}
+                        options={{
+                            headerShown: false
+                        }}
                     />
                     <Stack.Screen
                         name="ManageExpense"
