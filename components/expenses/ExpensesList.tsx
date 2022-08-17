@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
-import { FlatList, ListRenderItemInfo, StyleSheet, Text } from "react-native";
+import { FlatList, ListRenderItemInfo, StyleSheet } from "react-native";
+import ExpenseItem from "./ExpenseItem";
 import { ExpenseInterface } from "../../types";
 
 interface ExpensesListProps {
@@ -8,7 +9,7 @@ interface ExpensesListProps {
 
 const renderExpenseItem = (itemData: ListRenderItemInfo<ExpenseInterface>) => {
     return (
-        <Text>{itemData.item.description}</Text>
+        <ExpenseItem {...itemData.item} />
     );
 }
 

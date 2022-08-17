@@ -57,9 +57,11 @@ const ExpensesOutput: FunctionComponent<ExpensesOutputProps> = ({ expenses, expe
 
 const styles = StyleSheet.create({
     container: {
-        padding: 24,
-        backgroundColor: GlobalStyles.colors.primary700,
-        flex: 1
+        flex: 1,
+        paddingHorizontal: 24,
+        paddingTop: 24,
+        paddingBottom: 0,
+        backgroundColor: GlobalStyles.colors.primary700
     }
 });
 
