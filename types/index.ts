@@ -6,7 +6,8 @@ export type RootStackParamList = {
 }
 
 export interface ExpenseInterface {
-    date: Date;
+    id: string;
     description: string;
     amount: number;
+    date: Date | string;
 }

@@ -1,12 +1,23 @@
 import { FunctionComponent } from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, ListRenderItemInfo, StyleSheet, Text } from "react-native";
+import { ExpenseInterface } from "../../types";
 
-const ExpensesList: FunctionComponent = () => {
+interface ExpensesListProps {
+    expenses: ExpenseInterface[];
+}
+
+const renderExpenseItem = (itemData: ListRenderItemInfo<ExpenseInterface>) => {
+    return (
+        <Text>{itemData.item.description}</Text>
+    );
+}
+
+const ExpensesList: FunctionComponent<ExpensesListProps> = ({expenses}) => {
     return (
         <FlatList
-            data={}
-            renderItem={}
-            keyExtractor={}
+            data={expenses}
+            renderItem={renderExpenseItem}
+            keyExtractor={(item: ExpenseInterface) => item.id}
         />
     );
 };

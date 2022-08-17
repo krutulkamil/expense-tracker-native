@@ -1,9 +1,9 @@
 import { FunctionComponent } from "react";
-import { Text } from "react-native";
+import ExpensesOutput from "../components/expenses/ExpensesOutput";
 
 const RecentExpenses: FunctionComponent = () => {
     return (
-        <Text>Recent Expenses Screen</Text>
+        <ExpensesOutput expensesPeriod="Last 7 Days" />
     );
 };
 
