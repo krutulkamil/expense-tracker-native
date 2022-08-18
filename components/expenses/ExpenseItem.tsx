@@ -5,17 +5,13 @@ import { ExpenseInterface } from "../../types"
 import { GlobalStyles } from "../../constants/styles";
 import { getFormattedDate } from "../../util/date";
 
-interface ExpenseItemProps {
-    description: ExpenseInterface['description'];
-    amount: ExpenseInterface['amount'];
-    date: ExpenseInterface['date'];
-}
-
-const ExpenseItem: FunctionComponent<ExpenseItemProps> = ({ description, amount, date }) => {
+const ExpenseItem: FunctionComponent<ExpenseInterface> = ({ id, description, amount, date }) => {
     const navigation = useNavigation<NavigationProp<ParamListBase>>();
 
     const expensePressHandler = () => {
-        navigation.navigate('ManageExpense', {})
+        navigation.navigate('ManageExpense', {
+            expenseId: id
+        })
     };
 
     return (
