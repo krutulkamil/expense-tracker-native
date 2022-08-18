@@ -15,11 +15,17 @@ const ManageExpense: FunctionComponent<ManageExpenseProps> = ({ route, navigatio
     const editedExpenseId = route.params?.expenseId;
     const isEditing = !!editedExpenseId;
 
-    const deleteExpenseHandler = () => {};
+    const deleteExpenseHandler = () => {
+        navigation.goBack();
+    };
 
-    const cancelHandler = () => {};
+    const cancelHandler = () => {
+        navigation.goBack();
+    };
 
-    const confirmHandler = () => {};
+    const confirmHandler = () => {
+        navigation.goBack();
+    };
 
     useLayoutEffect(() => {
         navigation.setOptions({
