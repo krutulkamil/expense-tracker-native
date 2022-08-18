@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import { Pressable, View, Text, StyleSheet } from "react-native";
 import { NavigationProp, ParamListBase, useNavigation } from "@react-navigation/native";
-import { ExpenseInterface } from "../../types"
+import { ExpenseInterface } from "../../types/expense";
 import { GlobalStyles } from "../../constants/styles";
 import { getFormattedDate } from "../../util/date";
 

@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 import { View, StyleSheet } from "react-native";
 import ExpensesList from "./ExpensesList";
 import ExpensesSummary from "./ExpensesSummary";
-import { ExpenseInterface } from "../../types";
+import { ExpenseInterface } from "../../types/expense";
 import { GlobalStyles } from "../../constants/styles";
 
 interface ExpensesOutputProps {

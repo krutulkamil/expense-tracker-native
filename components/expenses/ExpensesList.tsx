@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import { FlatList, ListRenderItemInfo, StyleSheet } from "react-native";
 import ExpenseItem from "./ExpenseItem";
-import { ExpenseInterface } from "../../types";
+import { ExpenseInterface } from "../../types/expense";
 
 interface ExpensesListProps {
     expenses: ExpenseInterface[];

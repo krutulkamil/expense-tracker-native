@@ -4,7 +4,7 @@ import RecentExpenses from "../../screens/RecentExpenses";
 import AllExpenses from "../../screens/AllExpenses";
 import IconButton from "../UI/IconButton";
 import { GlobalStyles } from "../../constants/styles";
-import { RootStackParamList } from "../../types";
+import { RootStackParamList } from "../../types/navigation";
 
 const BottomTabs = createBottomTabNavigator<RootStackParamList>();
 

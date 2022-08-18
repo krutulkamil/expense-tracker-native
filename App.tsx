@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from "@react-navigation/native";
-import { RootStackParamList } from "./types";
+import { RootStackParamList } from "./types/navigation";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ManageExpense from "./screens/ManageExpense";
 import ExpensesOverview from "./components/navigation/ExpensesOverview";

@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { ExpenseInterface } from "../../types";
+import { ExpenseInterface } from "../../types/expense";
 import { GlobalStyles } from "../../constants/styles";
 
 interface ExpensesSummaryProps {
