@@ -11,7 +11,7 @@ const BottomTabs = createBottomTabNavigator<RootStackParamList>();
 const ExpensesOverview = () => {
     return (
         <BottomTabs.Navigator
-            screenOptions={{
+            screenOptions={({ navigation }) => ({
                 headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
                 headerTintColor: "white",
                 tabBarStyle: { backgroundColor: GlobalStyles.colors.primary500 },
@@ -21,10 +21,12 @@ const ExpensesOverview = () => {
                         icon="add"
                         size={24}
                         color={tintColor!}
-                        onPress={() => {}}
+                        onPress={() => {
+                            navigation.navigate('ManageExpense');
+                        }}
                     />
                 )
-            }}
+            })}
         >
             <BottomTabs.Screen
                 name="RecentExpenses"
@@ -33,7 +35,7 @@ const ExpensesOverview = () => {
                     title: "Recent Expenses",
                     tabBarLabel: "Recent",
                     tabBarIcon: ({ color, size }) => (
-                        <Ionicons name="hourglass" size={size} color={color}/>
+                        <Ionicons name="hourglass" size={size} color={color} />
                     )
                 }}
             />
@@ -44,7 +46,7 @@ const ExpensesOverview = () => {
                     title: "All Expenses",
                     tabBarLabel: "All Expenses",
                     tabBarIcon: ({ color, size }) => (
-                        <Ionicons name="calendar" size={size} color={color}/>
+                        <Ionicons name="calendar" size={size} color={color} />
                     )
                 }}
             />

@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import { Pressable, View, Text, StyleSheet } from "react-native";
+import { NavigationProp, ParamListBase, useNavigation } from "@react-navigation/native";
 import { ExpenseInterface } from "../../types"
 import { GlobalStyles } from "../../constants/styles";
 import { getFormattedDate } from "../../util/date";
@@ -11,7 +12,11 @@ interface ExpenseItemProps {
 }
 
 const ExpenseItem: FunctionComponent<ExpenseItemProps> = ({ description, amount, date }) => {
-    const expensePressHandler = () => {};
+    const navigation = useNavigation<NavigationProp<ParamListBase>>();
+
+    const expensePressHandler = () => {
+        navigation.navigate('ManageExpense', {})
+    };
 
     return (
         <Pressable
